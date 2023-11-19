@@ -1,0 +1,44 @@
+.object-cover{
+    object-fit: cover;
+}
+
+.full-height{
+    min-height: calc(100vh - 56px - 76px);
+}
+
+.btn:active{
+    border-color: transparent !important;
+}
+
+
+.article-card{
+    text-decoration: none;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgb(214, 212, 212);
+    padding: 10px;
+}
+
+.article-card:hover{
+    transform: translateX(15px);
+    transition: transform 0.3s ease-out 0s;
+}
+
+.multiline-ellipsis{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    color:gray
+}
+
+.swiper-pagination-bullet-active{
+    background-color: beige;
+}
+
+.Label-0-2-9{
+    font-size: 20px;
+}
+
