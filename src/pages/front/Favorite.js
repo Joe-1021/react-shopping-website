@@ -10,10 +10,13 @@ function Favorite() {
             <div className="mt-md-5 mt-3 mb-7 full-height">
                 {favoriteData.length === 0 ? (
                     <>
-                        <div className="alert alert-danger" role="alert">
-                            尚未加入我的最愛商品
+                        <div className="text-center">
+                            <i className="bi bi-heartbreak-fill " style={{ fontSize: '100px',color:'red' }}></i>
+                            <h2>尚未加入我的最愛商品!</h2>
                         </div>
-                        <Link className="btn btn-dark w-100 mt-4 rounded-0 py-3" to='/products'>去購物</Link>
+                        <div className="d-flex justify-content-center">
+                            <Link className="btn btn-outline-dark mt-4 rounded p-3" to='/products'>前往購物</Link>
+                        </div>
                     </>
 
                 ) : (

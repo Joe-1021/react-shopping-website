@@ -18,6 +18,7 @@ function SwiperBanner({banner}){
                 delay: 4000,
                 disableOnInteraction: false,
             }}
+            loop={true}
             navigation={true}
             pagination={{ clickable: true }}
         >
