@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../../components/Navbar";
+import Navbar2 from "../../components/Navbar2";
 import Footer from "../../components/Footer";
 import { useEffect, useReducer, useState } from "react";
 import axios from "axios";
@@ -27,7 +28,8 @@ function FrontLayout() {
 
     return (
         <>
-            <Navbar cartData={cartData}/>
+            {/* <Navbar cartData={cartData}/> */}
+            <Navbar2/>
             <MessageContext.Provider value={reducer}>
                 <Message2 />
                 <Outlet context={{ getCart , cartData , favoriteData,setFavoriteData}}>

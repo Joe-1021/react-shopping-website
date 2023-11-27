@@ -1,6 +1,6 @@
 export const CheckboxRadio = ({id, labelText, register, type, errors, rules, value, name}) => {
     return (<>
-      <div className='form-check'>
+      <div className='form-check me-3'>
         <input
           className={`form-check-input ${errors[name] && 'is-invalid'}`}
           type={type}
@@ -20,7 +20,7 @@ export const CheckboxRadio = ({id, labelText, register, type, errors, rules, val
     </>)
   }
 
- export const Input = ({ id, labelText, register, type, errors, rules }) => {
+ export const Input = ({ id, labelText, register, type, errors, rules, placeholder }) => {
     return (
       <>
         <label htmlFor={id} className='form-label'>
@@ -31,6 +31,7 @@ export const CheckboxRadio = ({id, labelText, register, type, errors, rules, val
           type={type}
           className={`form-control ${errors[id] && 'is-invalid'}`}
           {...register(id, rules)}
+          placeholder={placeholder}
         />
         {errors[id] && (
           <div className='invalid-feedback'>{errors[id]?.message}</div>

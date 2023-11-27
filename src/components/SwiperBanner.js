@@ -15,7 +15,7 @@ function SwiperBanner({banner}){
             spaceBetween={50} //Slide之間的距離 
             slidesPerView={1} //一頁顯示幾個slide
             autoplay={{
-                delay: 4000,
+                delay: 400000,
                 disableOnInteraction: false,
             }}
             loop={true}
@@ -25,7 +25,7 @@ function SwiperBanner({banner}){
             {banner.map((i)=>{
                 return(
                     <SwiperSlide key={i.id}>
-                        <img className='w-100 object-cover img-fluid' style={{height:'95vh'}} src={i.image} alt="全新開幕" />
+                        <img className='object-cover w-100 ' style={{height:'95vh'}} src={i.image} alt="全新開幕" />
                     </SwiperSlide>
                 )
             })}

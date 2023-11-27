@@ -42,3 +42,15 @@
     font-size: 20px;
 }
 
+.nav-link:hover{
+    border-bottom:2px solid red;
+}
+
+.nav-link.active{
+
+    color:red !important;
+}
+
+.dropdown-menu[data-bs-popper]{
+    left: -90% !important;
+}

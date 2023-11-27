@@ -68,7 +68,7 @@ function Home() {
             <section className="bg-dark py-5">
                 <div className="container">
                     <h1 className="text-center text-white mb-5">合租好處</h1>
-                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-5">
                         <div className="col">
                             <div className="card position-relative bg-dark border-white p-4 rounded h-100">
                                 <span className="position-absolute translate-middle-y top-0 px-2 bg-dark text-white" style={{ left: '20px' }}><h3>01</h3></span>
@@ -127,7 +127,7 @@ function Home() {
                     <h2 className="mb-3 text-white">最新室友
                         <Link to="#"><span className="ms-3 fs-6">查看更多</span></Link>
                     </h2>
-                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
+                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 gy-5">
                         <div className="col">
                             <div className="card bg-dark mb-4 rounded border-white h-100">
                                 <i className="bi bi-person-circle text-center text-white border-0" style={{ fontSize: '84px' }}></i>

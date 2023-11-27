@@ -1,5 +1,7 @@
 import { Routes , Route } from "react-router-dom";
 import Login from "./pages/Login";
+import SignUp from "./pages/front/SignUp";
+import LandlordSignUp from "./pages/front/LandlordSignUp";
 import Dashboard from "./pages/admin/Dashboard";
 import AdminProducts from "./pages/admin/AdminProducts";
 import AdminCoupons from "./pages/admin/AdminCoupons";
@@ -25,6 +27,8 @@ function App() {
       <Routes>
         <Route path='/' element={< FrontLayout />}>
           <Route path='' element={< Home />}></Route>
+          <Route path="signup" element={<SignUp />}></Route>
+          <Route path="host-signup" element={<LandlordSignUp />}></Route>
           <Route path='products' element={< Products />}></Route>
           <Route path='favorite' element={<Favorite />}></Route>       
           <Route path='product/:id' element={< ProductDetail />}></Route>
