@@ -130,7 +130,7 @@ function Navbar2() {
                 
               </>) : (<>
                 <li className="nav-item text-center">
-                  <button type="button" className="nav-link btn" onClick={() => {
+                  <button type="button" className="nav-link btn w-100" onClick={() => {
                     closeCollapse();
                     openLoginModal();
                   }}>登入</button>
