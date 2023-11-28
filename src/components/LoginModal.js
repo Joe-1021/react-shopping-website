@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 function LoginModal({ closeLoginModal }) {
     const [email, setEmail] = useState('');
@@ -22,7 +23,14 @@ function LoginModal({ closeLoginModal }) {
             closeLoginModal();
             window.location.reload();
         } catch (error) {
-            console.log(error)
+            Swal.fire({
+                title: '登入失敗!',
+                text:'帳號密碼尚未註冊',
+                //showConfirmButton: false,
+                icon: 'warning',
+            })
+            setEmail('');
+            setPassword('')
         }
         
     }
