@@ -78,6 +78,7 @@ function LandlordSignUp() {
                             errors={errors}
                             register={register}
                             rules={{
+                                required: '確認密碼為必填',
                                 validate: (match) => {
                                     const password = getValues('password');
                                     return match === password || '與密碼不符合'
@@ -142,7 +143,7 @@ function LandlordSignUp() {
                         <CheckboxRadio
                             id='agree'
                             name='agree'
-                            labelText={<p>
+                            labelText={<p className="text-break">
                                 我已仔細閱讀並明瞭「<button type="button" className="btn text-primary" style={{textDecoration:'underLine'}}>服務條款</button>」、
                                 「<button type="button" className="btn text-primary" style={{textDecoration:'underLine'}}>免責聲明</button>」、
                                 「<button type="button" className="btn text-primary" style={{textDecoration:'underLine'}}>隱私權聲明</button>」

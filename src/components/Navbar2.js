@@ -8,16 +8,16 @@ import Loading from "./Loading";
 
 function Navbar2() {
   const [name, setName] = useState('');
-  const [,setToken] = useState('');
-  const [isLoading,setIsLoading] = useState(false)
-  const [status,setStatus] = useState(false);
-  const navCollapse = useRef(null);
+  const [, setToken] = useState('');
+  const [isLoading, setIsLoading] = useState(false)
+  const [status, setStatus] = useState(false);
+  //const navCollapse = useRef(null);
   const loginModal = useRef(null);
   const token = document.cookie
     .split('; ')
     .find((row) => row.startsWith('token='))
     ?.split('=')[1];
-  
+
 
   const checkOut = async () => {
     try {
@@ -32,16 +32,16 @@ function Navbar2() {
     }
   }
 
-  const logout = async() => {
+  const logout = async () => {
     try {
       setIsLoading(true);
       const res = await axios.post('https://todolist-api.hexschool.io/users/sign_out',
-      {},
-      {
-        headers: {
-          Authorization: token
-        }
-      });
+        {},
+        {
+          headers: {
+            Authorization: token
+          }
+        });
       setStatus(false);
       setToken('');
       setIsLoading(false);
@@ -51,17 +51,17 @@ function Navbar2() {
   }
 
   useEffect(() => {
-    navCollapse.current = new Collapse('#navbarNav');
     loginModal.current = new Modal('#loginModal');
-  }, [])
+  },[])
 
-  useEffect(()=>{
+  useEffect(() => {
     checkOut()
-  },[status])
+  }, [status])
 
 
   const closeCollapse = () => {
-    navCollapse.current.hide();
+    let navCollapse = new Collapse('#navbarNav');
+    navCollapse.hide();
   }
 
   const openLoginModal = () => {
@@ -72,19 +72,19 @@ function Navbar2() {
     loginModal.current.hide()
   }
 
-  
+
 
 
   return (
     <>
-      <Loading isLoading={isLoading}/>
+      <Loading isLoading={isLoading} />
       <LoginModal closeLoginModal={closeLoginModal} />
       <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-white">
         <div className="container-fluid">
           <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <NavLink className="navbar-brand" to='/' onClick={closeCollapse}>Zugether</NavLink>
+          <NavLink className="navbar-brand" to='/'>Zugether</NavLink>
 
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -95,12 +95,12 @@ function Navbar2() {
                 <NavLink className="nav-link" to='/favorite' onClick={closeCollapse}>我的最愛</NavLink>
               </li>
               <li className="nav-item text-center">
-                <NavLink className="nav-link" to="/articles" onClick={closeCollapse}>討論區</NavLink>
+                <button type='button' className="nav-link w-100" onClick={closeCollapse}>討論區</button>
               </li>
               <li className="nav-item text-center">
                 <NavLink className="nav-link" to='/articles' onClick={closeCollapse}>網站公告</NavLink>
               </li>
-              
+
               {/* <li className="nav-item text-center">
                 <NavLink className="nav-link" href="#" onClick={closeCollapse}>聊天室</NavLink>
               </li>
@@ -109,11 +109,11 @@ function Navbar2() {
               </li> */}
               {status ? (<>
                 <li className="nav-item">
-                  <button className="btn" ><i className="bi bi-chat-left-dots"></i></button>
+                  <button className="btn w-100" ><i className="bi bi-chat-left-dots"></i></button>
                 </li>
                 <li className="nav-item dropdown text-center">
                   <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i className="bi bi-person-circle me-2"></i>{name}
+                    <i className="bi bi-person-circle me-2"></i>{name}
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a className="dropdown-item text-center" href="#">個人檔案</a></li>
@@ -126,8 +126,8 @@ function Navbar2() {
                     </li>
                   </ul>
                 </li>
-                
-                
+
+
               </>) : (<>
                 <li className="nav-item text-center">
                   <button type="button" className="nav-link btn w-100" onClick={() => {
